@@ -1,0 +1,912 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --bg-color: rgb(255, 255, 255);
+    --second-bg-color: rgb(188, 188, 188);
+    --text-color: #767474;
+    --main-color: #212121;
+    --white: white;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Scrollbar Fix */
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 10px;
+}
+
+/* Social Icons */
+
+.social-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 2rem;
+    z-index: 101;
+    padding: 5px;
+}
+
+.social-icon a {
+    width: 3rem;
+    height: 3rem;
+    border: 0.2rem solid var(--white);
+    font-size: 2rem;
+    border-radius: 50%;
+    color: var(--white);
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon a:hover {
+    color: var(--main-color);
+    transform: scale(1.3);
+    background: var(--bg-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+/* Header */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 1.5rem 10%;
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+
+body {
+    margin-top: 60px; 
+}
+
+@media (max-width: 768px) {
+    
+    .header {
+        height: 60px;
+        padding: 1rem 5%; 
+    }
+
+    
+    body {
+        margin-top: 60px; 
+    }
+}
+
+/* Logo Icon Top */
+
+a img {
+    transition: filter 0.3s ease;
+}
+a:hover img {
+    filter: brightness(100%);
+}
+
+a:hover img {
+    filter: brightness(100%);
+}
+/* Logo */
+
+a img {
+    transition: filter 0.3s ease;
+}
+a:hover img {
+    filter: brightness(100%);
+}
+
+/* Logo */
+.logo {
+    font-size: 3rem;
+    color: var(--main-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+/* Section Styling */
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+/* Home Content */
+.container-home {
+    display: grid;
+    align-items: stretch;
+    gap: 2.5rem;
+    font-size: 1.5rem;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border: 2px solid #000;  /* Border around the box */
+    border-radius: 10px;  /* Rounded corners */
+    background-color: var(--main-color); /* Light background color */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+.content-box p {
+    font-size: 1.7rem !important;
+    color: var(--white);
+}
+.content-box:hover {
+    color: var(--text-color);
+    border: 2px solid var(--main-color);
+    font: var(--main-color);
+    cursor: pointer;
+}
+
+/*Home*/
+
+.home {
+    text-align: center;
+    padding-top: 80px; 
+}
+
+/* Keyframes for slide down animation for text */
+@keyframes slideDownText {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Responsive Layout Adjustments */
+@media (max-width: 768px) {
+    .home-content h1 {
+        font-size: 3rem;
+    }
+    .typing-text {
+        font-size: 1.8rem;
+    }
+}
+/* Home Content (Heading) */
+.home-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* Home Image */
+
+.home img {
+    width: 250px;
+    height: 250px;
+    max-width: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    transition: transform 0.3s ease, filter 0.6s ease;
+    animation: slideDownImage 1.2s ease-out forwards;
+}
+
+/* Hover Effect on Home Image */
+.home-img img:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: 0.3s ease;
+    filter: drop-shadow(0 0 25px var(--main-color));
+}
+
+/* Span text color */
+span {
+    color: var(--main-color);
+}
+
+/* Typing Text */
+
+.typing-text {
+    font-size: 2rem !important;
+    font-weight: 600;
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Break long words if necessary */
+    width: 100%; /* Ensure it takes up available width */
+    max-width: 100%; /* Prevents text from expanding beyond the container */
+    display: block; /* Ensure it's treated as a block-level element */
+    overflow: hidden; /* Hide any overflowing text */
+}
+
+/* Adjust the font size for mobile */
+@media screen and (max-width: 768px) {
+    .typing-text {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+        padding: 0 10px; /* Ensure text has some space on mobile */
+    }
+}
+
+/* Keyframes for typing effect */
+@keyframes typingEffect {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+/* Content Box */
+.container-home {
+    animation: slideInFromTop 2s ease-out forwards;
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1;
+}
+}
+/* Optional: Style for paragraph text */
+.container-home .content-box p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Add a slight delay if desired */
+.container-home .content-box {
+    animation-delay: 0.5s;
+}
+
+/* Aligns the things on the Header */
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.home img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 10px;
+}
+.home-content p {
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    #menu-icon {
+        font-size: 3.6rem;
+        color: var(--white);
+        display: none;
+        cursor: pointer;
+}  
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--white);
+    display: none;
+    cursor: pointer;
+}
+
+/* Navbar */
+
+.navbar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.navbar img:hover {
+    color: var(--main-color);
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 20px;
+    filter: drop-shadow(0 0 25px var(--white));
+}
+
+.navbar img {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.navbar a:hover,
+.navbar a:active {
+    color: var(--bg-color);
+    border-bottom: 3px solid var(--white);
+}
+
+/* Hide the menu toggle checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Mobile Menu Icon (Hamburger) */
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--white);
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 995px) {
+    /* Show the hamburger icon on smaller screens */
+    #menu-icon {
+        display: block;
+    }
+
+    /* Initially hide the navbar on small screens */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Show the navbar when the checkbox is checked */
+    .menu-toggle:checked + #menu-icon + .navbar {
+        display: flex;
+    }
+
+    /* Move social icons inside the navbar */
+    .navbar .social-icon {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    /* Style the social icons */
+    .navbar .social-icon a {
+        font-size: 2rem;
+        margin-left: 0;
+    }
+
+    /* Navbar links style on small screens */
+    .navbar a {
+        font-size: 2rem;
+        margin: 0;
+        text-align: center;
+    }
+
+    /* Hide the home icon image on small screens */
+    .navbar img {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Make navbar appear in full width and on top */
+    .navbar {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--main-color);
+        display: none; /* Hide navbar by default on mobile */
+    }
+
+    /* Show the navbar when the checkbox is checked */
+    .menu-toggle:checked + #menu-icon + .navbar {
+        display: flex; /* Display navbar when checked */
+    }
+
+    /* Style for navbar links in smaller screens */
+    .navbar a {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hide the home icon image on small screens */
+    .navbar img {
+        display: none;
+    }
+}
+
+/* Large screens only: Show MyIcon.png */
+@media (min-width: 996px) {
+    /* Keep social icons outside navbar on larger screens */
+    .social-icon {
+        display: flex;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+    }
+
+    /* Restore original navbar image visibility for larger screens */
+    .navbar img {
+        display: block; /* Show the image on large screens */
+    }
+    
+    /* Restore original link styles for larger screens */
+    .navbar a {
+        font-size: 1.8rem;
+        margin-left: 4rem;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Make navbar appear in full width and on top */
+    .navbar {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--main-color);
+        display: none; /* Hide navbar by default on mobile */
+    }
+
+    /* Show the navbar when the checkbox is checked */
+    .menu-toggle:checked + #menu-icon + .navbar {
+        display: flex; /* Display navbar when checked */
+    }
+
+    /* Style for navbar links in smaller screens */
+    .navbar a {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hide the home icon image on small screens */
+    .navbar img {
+        display: none;
+    }
+}
+
+/* Large screens only: Show MyIcon.png */
+@media (min-width: 996px) {
+    /* Show social icons outside navbar on large screens */
+    .social-icon {
+        display: flex;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+    }
+
+    /* Restore original navbar image visibility for larger screens */
+    .navbar img {
+        display: block; /* Show the image on large screens */
+    }
+    
+    /* Restore original link styles for larger screens */
+    .navbar a {
+        font-size: 1.8rem;
+        margin-left: 4rem;
+        font-weight: 500;
+    }
+}
+
+/* Btn Style */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--bg-color);
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin: 10px;
+}
+/* Keyframes for sliding in from the bottom */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%); /* Start off-screen from the bottom */
+        opacity: 0; /* Make it invisible at the start */
+    }
+    100% {
+        transform: translateY(0); /* End at its original position */
+        opacity: 1; /* Make it fully visible */
+    }
+}
+@media (max-width: 500px) {
+    .btn {
+        font-size: 1.4rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Footer */
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: #000;
+    display: flex; /* Enable flexbox layout */
+    justify-content: space-between; /* Space out the content */
+    align-items: center; /* Align items vertically */
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
+    box-sizing: border-box; /* Ensure padding doesn't affect the layout */
+}
+
+/* On small screens, make footer elements stack vertically */
+@media screen and (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center; /* Center the content */
+    }
+
+    .footer .social {
+        display: none; /* Hide social icons on small screens */
+    }
+
+    .footer ul {
+        text-align: center; /* Center the footer links */
+        margin-top: 20px; /* Add space between social icons and links */
+    }
+
+    .footer .copyright {
+        margin-top: 20px; /* Add space above the copyright text */
+    }
+
+    /* Scroll-top button for small screens */
+    .scroll-top {
+        bottom: 20px; /* Move the arrow up for small screens */
+        display: block; /* Ensure it's visible on small screens */
+    }
+}
+
+/* On larger screens, show social icons */
+@media screen and (min-width: 769px) {
+    .footer .social {
+        display: block; /* Show social icons on large screens */
+        text-align: left; /* Align social icons to the left */
+    }
+
+    .footer .social a {
+        font-size: 25px;
+        color: var(--white);
+        border: 2px solid var(--white);
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        margin: 0 10px;
+        transition: 0.3s ease;
+    }
+
+    .footer .social a:hover {
+        transform: scale(1.2) translateY(-5px);
+        background: var(--white);
+        color: #000;
+    }
+}
+
+/* Styling for the footer links (ul) */
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 0;
+    text-align: center;
+    list-style-type: none; /* Removes bullet points */
+}
+
+/* Footer copyright styling */
+.footer .copyright {
+    color: var(--white);
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.4s ease;
+}
+
+.footer .copyright:hover {
+    color: var(--white); /* Change color on hover */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(43, 36, 36, 0.4); /* Glowing effect */
+}
+
+/* Footer links hover effect */
+.footer ul li a {
+    color: black;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid black;
+}
+
+/* Arrow for the Footer */
+.scroll-top {
+    position: absolute;
+    left: 50%;
+    bottom: 60px; /* Default position */
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: black;
+    background: white;
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.4s ease-in-out, box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transform-origin: center;
+}
+
+/* Scroll-top button visibility */
+.scroll-top {
+    display: block; /* Ensure it's visible on all screens */
+}
+
+/* Scroll-top hover effect */
+.scroll-top:hover {
+    background: var(--bg-color);
+    color: #000;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Glowing white shadow */
+}
+
+/* On small screens, adjust the position of the scroll-top button */
+@media screen and (max-width: 768px) {
+    .scroll-top {
+        bottom: 75px; /* Move the arrow higher for mobile */
+    }
+}
+
+/* - Photos - */
+
+.photos {
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full viewport height */
+    margin-top: -5rem; /* Move section up by adding negative margin */
+}
+
+.photos h2 {
+    text-align: center;
+    font-size: 3rem; /* Slightly larger title */
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 3rem; /* More space between title and photos container */
+    width: 100%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 10px;
+}
+
+.photos h2::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background: var(--main-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.photos .container {
+    background: var(--main-color);
+    color: var(--text-color);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    width: 85%;
+    max-width: 1200px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.photos .container .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 3rem;
+    justify-content: center; /* Ensures center alignment */
+    width: 100%;
+    max-width: 1000px;
+}
+
+.photos .container .bar {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    background: var(--bg-color);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Adding initial soft shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transition for box-shadow on hover */
+}
+
+.photos .container .bar:hover {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 6px 20px rgb(255, 255, 255); /* Glow effect with red color */
+}
+
+.photos .container .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.photos .container .bar .info span {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    color: var(--text-color);
+    text-transform: capitalize;
+}
+
+.photos .container .bar .info img {
+    width: 100%; 
+    height: 150px;
+    object-fit: cover;
+    border-radius: 1rem; 
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Add hover effect for scaling the image */
+.photos .container .bar .info img:hover {
+    transform: scale(1.1); 
+}
+
+/* Add entrance animation to the images */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animate each bar when it comes into view */
+@keyframes fadeInBars {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.photos .container .row .bar {
+    animation: fadeInBars 0.8s ease-out forwards; /* Animate each bar with a delay */
+    animation-delay: 0.2s;
+}
+
+/* Add slight delay for each bar for a staggered effect */
+.photos .container .row .bar:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.photos .container .row .bar:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.photos .container .row .bar:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.photos .container .row .bar:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+/* Responsive Fixes */
+@media screen and (max-width: 1024px) {
+    .photos .container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .photos .container .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .photos .container .row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Additional Media Queries for Fine-Tuning */
+@media screen and (max-width: 1024px) {
+    .photos .container .row {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .photos .container .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .photos .container .row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Box */
